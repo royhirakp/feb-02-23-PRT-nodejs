@@ -14,9 +14,10 @@ const { json } = require('body-parser');
 
 //connection to database 
 // mongodb+srv://admin:admin@cluster0.3vq7b6q.mongodb.net/api_web_tech_assignment
-// mongoose.connect(process.env.MONGO_URL)
+// console.log(process.env.MONGO_URL)
 mongoose.set('strictQuery', false);
-mongoose.connect('mongodb+srv://admin:admin@cluster0.3vq7b6q.mongodb.net/test2_2_2023')
+mongoose.connect(process.env.MONGO_URL)
+// mongoose.connect('mongodb+srv://admin:admin@cluster0.3vq7b6q.mongodb.net/test2_2_2023')
   .then(() => console.log('database Connected!'))
   .catch((e) => console.log('Error!!! to connect the database' + e.message))
 // MIDDLEWARE
